@@ -1,2 +1,2 @@
 # PyroWerewolf
-Tentando recriar o codigo do bot Werewolf no Pyrogram.
+Estou aprendendo python, escolhi a blibioteca pyrogram para desenvolver um bot como do Werewolf/Caperu.
