@@ -7,7 +7,7 @@ class Lobinho:
     Partidas = {
         "123456789": {
             "Luan": ["Vidente", "Vivo"],
-            "Luana": ["Lobo", "Morto"],
+            "Luana": ["Lobo", "Vivo"],
             "Lua": ["Aldeão", "Morto"],
         }
     }
@@ -22,6 +22,10 @@ class Lobinho:
             vivos += 1
             if papel [0] == "Vidente":
                 print (f"O vidente é {nomes}")
+                # TODO: Timeout
+                vchoice = input("Quem você quer ver?")
+                papels = Partidas["123456789"][vchoice][0]
+                print (f"{vchoice} é {papels}")
     if vivos > mortos:
         print(f"ainda vivos {vivos} e mortos {mortos}")
     else:
