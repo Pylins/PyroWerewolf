@@ -1,7 +1,7 @@
-import pyrogram
-from pyrogram import Client
+#import pyrogram
+#from pyrogram import Client
 import asyncio
-app = Client ("botcapi")
+#app = Client ("botcapi")
 
 class Lobinho:
     Partidas = {
