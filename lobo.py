@@ -25,7 +25,7 @@ class Lobinho:
                     if papel[0] == "Vidente":
                         vchoice = input(f"{nomes} (Vidente), quem você quer investigar? ")
                         print(f"{vchoice} é {self.Partidas['123456789'][vchoice][0]}.")
-
+                        
             # Manhã
             vivos, mortos = 0, 0
             for nomes in self.Partidas["123456789"]:
