@@ -63,7 +63,7 @@ class Wolf:
         # Timeout 60s to wait others players
         await app.send_message(grupo, "Partida criada! Use /entrar para participar.")
         await asyncio.sleep(60)
-        # start game if +3 players
+        # Start game if +3 players
         if len(Wolf.Games[game_id]) < 3:
             await app.send_message(grupo_id, "Número mínimo de jogadores não atingido. Partida cancelada.")
             del Wolf.Games[game_id]
