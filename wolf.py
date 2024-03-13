@@ -48,7 +48,7 @@ class Wolf:
             "Luan": ["Ville","Villager","Alive"],
             "Luana": ["Wolves","Village","Alive"],
             "Lucas": ["Ville","Gravida","Dead"],
-            "Luciana": ["Ville","Detective","Alive"],
+            "Lucy": ["Ville","Detective","Alive"],
             "Lara": ["Solo","Alien","Alive"],
             "Joao": ["Sect","Zombie","Alive"],
         }
@@ -60,10 +60,10 @@ class Wolf:
         # TODO: Verificação se ja iniciaram a partida ou se já usaram o /jogar, caso sim apenas adicione o usuario.
         group_id = msg.chat.id
         Wolf.Games[game_id] = {}
-        # Tempo de 60s para outros jogadores entrarem
+        # Timeout 60s wait other players
         await app.send_message(grupo, "Partida criada! Use /entrar para participar.")
         await asyncio.sleep(60)
-        # Inicia o jogo se houver +3 jogadores e atribui os papeis
+        # start game if +3 players and assign roles
         if len(Wolf.Games[game_id]) < 3:
             await app.send_message(grupo_id, "Número mínimo de jogadores não atingido. Partida cancelada.")
             del Wolf.Games[game_id]
