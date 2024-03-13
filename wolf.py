@@ -60,7 +60,7 @@ class Wolf:
         # TODO: Verificação se ja iniciaram a partida ou se já usaram o /jogar, caso sim apenas adicione o usuario.
         group_id = msg.chat.id
         Wolf.Games[game_id] = {}
-        # Timeout 60s wait other players
+        # Timeout 60s to wait others players
         await app.send_message(grupo, "Partida criada! Use /entrar para participar.")
         await asyncio.sleep(60)
         # start game if +3 players
