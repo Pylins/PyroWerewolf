@@ -75,15 +75,17 @@ class Wolf:
     # /join to game
     @app.on_message(filter.command("join"|"entrar"))
     async def join(client, msg):
-        # Adiciona o jogador na partida do grupo apenas se a partida não estiver começado
+        # TODO: Adiciona o jogador na partida do grupo apenas se a partida não estiver começado
         pass
     async def assign_roles():
+        # TODO:
         # Atribui papeis conforme:
         # no minimo um lobo
         # apartir de 4 pessoas deve ter mais lobos
         # apartir de 10 jogadores haverá a seita
         pass
     async def play():
+        # TODO:
         # Inicia o jogo com os jogadores.
         # Primeira noite começa
         # Mostra quem morreu e os jogadores ainda vivos
@@ -93,6 +95,7 @@ class Wolf:
         # Ciclo se repete, mas a qualquer momento se os lobos forem todos mortos a aldeia ganha, se a quantidade de lobos for igual a quantidade de aldeaia os lobos ganham, se o suicida for enforcado a aldeia e lobos perdem e ele será o unico ganhador, se a seita conseguir ter mais jogadores que lobos e aldeias
         pass
     async def night():
+        # TODO:
         # Tempo para que realizem ações 60s
         # Envia as menssagens aos jogadores com açao noturna
         # Se for vidente podera ver um papel e receber a resposta de dia
@@ -101,12 +104,14 @@ class Wolf:
         # Os integrantes da seita poderao converter mas se tentarem seitar um lobo irão morrer
         pass
     async def day():
+        # TODO
         # Envia a resposta das ações noturnas para os jogadores vivos
         # Tempo para ações 60s
         # Envia as menssagens aos jogadores com ação diurna
         # Se for detetive podera investigar alguem e tera o resultado quando iniciar a votação da forca
         pass
     async def poll():
+        # TODO:
         # Os jogadores devem votar em alguem para enforcar (matar)
         pass
     
