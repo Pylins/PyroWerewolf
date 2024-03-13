@@ -7,7 +7,7 @@ import random
 
 app = Client ("botcapi")
 
-class Lobinho:
+class Wolf:
     
     # Roles={Country:{Team:{Role:[emoji,description,conversion]}}}
     Roles = {
@@ -53,35 +53,35 @@ class Lobinho:
         }
     }
     
-    # /jogar: Inicia uma nova partida
-    @app.on_message(filters.command("jogar"))
-    async def jogar(client, msg):
-        # TODO: Verificação se ja iniciaram a partida ou se já usaram o /jogat, caso sim apenas adicione o usuario.
-        grupo = msg.chat.id
-        Lobinho.Partidas[grupo] = {}
+    # /start new werewolf game
+    @app.on_message(filters.command("start"|"jogar"))
+    async def start(client, msg):
+        # TODO: Verificação se ja iniciaram a partida ou se já usaram o /jogar, caso sim apenas adicione o usuario.
+        group_id = msg.chat.id
+        Wolf.Games[game_id] = {}
         # Tempo de 60s para outros jogadores entrarem
         await app.send_message(grupo, "Partida criada! Use /entrar para participar.")
         await asyncio.sleep(60)
         # Inicia o jogo se houver +3 jogadores e atribui os papeis
-        if len(Lobinho.Partidas[partida_id]) < 3:
-            await app.send_message(grupo, "Número mínimo de jogadores não atingido. Partida cancelada.")
-            del Lobinho.Partidas[partida_id]
+        if len(Wolf.Games[game_id]) < 3:
+            await app.send_message(grupo_id, "Número mínimo de jogadores não atingido. Partida cancelada.")
+            del Wolf.Games[game_id]
             return
-        await Lobinho.atribuir_papeis(client, message, partida_id)
-        await Lobinho.iniciar(client, message, partida_id)
+        await Wolf.assign_roles(client, message, game_id)
+        await Wolf.play(client, message, game_id)
         
-    # /entrar: Permite outros jogadores entrarem na partida do grupo
-    @app.on_message(filter.command("entrar"))
-    async def entrar(client, msg):
+    # /join to game
+    @app.on_message(filter.command("join"|"entrar"))
+    async def join(client, msg):
         # Adiciona o jogador na partida do grupo apenas se a partida não estiver começado
         pass
-    async def atribuir_papeis():
+    async def assign_roles():
         # Atribui papeis conforme:
         # no minimo um lobo
         # apartir de 4 pessoas deve ter mais lobos
         # apartir de 10 jogadores haverá a seita
         pass
-    async def iniciar():
+    async def play():
         # Inicia o jogo com os jogadores.
         # Primeira noite começa
         # Mostra quem morreu e os jogadores ainda vivos
@@ -90,7 +90,7 @@ class Lobinho:
         # Jogador mais votado é revelado
         # Ciclo se repete, mas a qualquer momento se os lobos forem todos mortos a aldeia ganha, se a quantidade de lobos for igual a quantidade de aldeaia os lobos ganham, se o suicida for enforcado a aldeia e lobos perdem e ele será o unico ganhador, se a seita conseguir ter mais jogadores que lobos e aldeias
         pass
-    async def noite():
+    async def night():
         # Tempo para que realizem ações 60s
         # Envia as menssagens aos jogadores com açao noturna
         # Se for vidente podera ver um papel e receber a resposta de dia
@@ -98,13 +98,13 @@ class Lobinho:
         # No segundo dia a bruxa poderá ressucitar um jogador morto
         # Os integrantes da seita poderao converter mas se tentarem seitar um lobo irão morrer
         pass
-    async def dia():
+    async def day():
         # Envia a resposta das ações noturnas para os jogadores vivos
         # Tempo para ações 60s
         # Envia as menssagens aos jogadores com ação diurna
         # Se for detetive podera investigar alguem e tera o resultado quando iniciar a votação da forca
         pass
-    async def votar():
+    async def poll():
         # Os jogadores devem votar em alguem para enforcar (matar)
         pass
     
