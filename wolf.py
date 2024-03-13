@@ -23,7 +23,7 @@ class Wolf:
             "Solo": {
                 
             },
-            "Village": {
+            "Ville": {
                 "Villager": ["👱","Você é um aldeão, só fica varrendo o chão.",100],
                 "Detective": ["🧐","Elementar, meu caro Watson! Você é um detetive aja como tal.",70],
             },
@@ -35,7 +35,7 @@ class Wolf:
             "Solo": {
                 "Alien": ["👽","Busquem conhecimento. Como o ET Bilu você pode visitar jogadores.",],
             },
-            "Village": {
+            "Ville": {
                 "Gravida": ["🤰","Você está gravida, parabéns seria se você não fosse a gravida de Taubaté.", 100]
             },
         },
@@ -43,13 +43,14 @@ class Wolf:
     
     # Games={GameID:{Name:[Team,Role,State]}}
     Games = {
+        # Example
         "123456789": {
-            "Luan": ["Aldeia","Vidente","Vivo"],
-            "Luana": ["Alcateia","Lobo","Vivo"],
-            "Lucas": ["Aldeia","Aldeão","Morto"],
-            "Luciana": ["Aldeia","Bruxa","Vivo"],
-            "Lara": ["Solo","Suicida","Vivo"],
-            "Joao": ["Solo","Seita","Vivo"],
+            "Luan": ["Ville","Villager","Alive"],
+            "Luana": ["Wolves","Village","Alive"],
+            "Lucas": ["Ville","Gravida","Dead"],
+            "Luciana": ["Ville","Gravida","Alive"],
+            "Lara": ["Solo","Alien","Alive"],
+            "Joao": ["Sect","Zombie","Alive"],
         }
     }
     
