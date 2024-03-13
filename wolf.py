@@ -21,7 +21,7 @@ class Wolf:
                 "Zombie": ["🧟","Cerebro o que mais deseja. Você é um zombie, infecte outros jogadores e comece o apocalipse.",0],
             },
             "Solo": {
-                
+                "Hannibal": ["🔪","Você é um serial killer.",0]
             },
             "Ville": {
                 "Villager": ["👱","Você é um aldeão, só fica varrendo o chão.",100],
@@ -48,7 +48,7 @@ class Wolf:
             "Luan": ["Ville","Villager","Alive"],
             "Luana": ["Wolves","Village","Alive"],
             "Lucas": ["Ville","Gravida","Dead"],
-            "Luciana": ["Ville","Gravida","Alive"],
+            "Luciana": ["Ville","Detective","Alive"],
             "Lara": ["Solo","Alien","Alive"],
             "Joao": ["Sect","Zombie","Alive"],
         }
