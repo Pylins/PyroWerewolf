@@ -9,7 +9,7 @@ app = Client ("botcapi")
 
 import json
 with open("roles.json") as f:
-    roles = json.load(f)
+    Roles = json.load(f)
     
 class Wolf:
     
