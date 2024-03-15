@@ -38,7 +38,7 @@ class Wolf:
     # /start new werewolf game
     @app.on_message(filters.command("start"|"jogar"))
     async def start(client, msg):
-        # TODO: Verificação se ja iniciaram a partida ou se já usaram o /jogar, caso sim apenas adicione o usuario.
+        # TODO: check the game start in the group and add player
         group_id = msg.chat.id
         Wolf.Games[game_id] = {}
         # Timeout 60s to wait others players
@@ -50,20 +50,36 @@ class Wolf:
             del Wolf.Games[game_id]
             return
         # assign roles and play
-        await Wolf.assign_roles(client, message, game_id)
+        # TODO: filter to define the game mode
+        mode = "Normal"
+        await Wolf.assign_roles(mode, game_id)
         await Wolf.play(client, message, game_id)
         
     # /join to game
     @app.on_message(filter.command("join"|"entrar"))
     async def join(client, msg):
-        # TODO: Adiciona o jogador na partida do grupo apenas se a partida não estiver começado
+        Wolf.Games["123456789"].update({"Jose": ["None","None","Alive"]})
+        # TODO: Check player join and check game state
         pass
-    async def assign_roles():
+    async def assign_roles(mode, game_id):
+        game = Wolf.Games[game_id]
+        players = list(game.keys())
+        if mode == "Normal":
+            # Calculate and set the numbers of wolfs
+            wolves = max(1, int(len(game) * 0.25))
+            # Random choice the wolf players
+            wolf_players = random.sample(players, wolves)
+            # Loops for set roles
+            for player in wolf_players:
+                # Random role wolf team
+                papel = random.choice(Wolf.Modes[mode]["Wolves"])
+                game[player] = ["Wolves", papel, "Alive"]
+            for player in players:
+                if player not in wolf_players:
+                    papel = random.choice(Wolf.Modes[mode]["Ville"])
+                    game[player] = ["Ville", papel, "Alive"]
         # TODO:
-        # Atribui papeis conforme:
-        # no minimo um lobo
-        # apartir de 4 pessoas deve ter mais lobos
-        # apartir de 10 jogadores haverá a seita
+        # logic if players < 10 = set sect
         pass
     async def play():
         # TODO:
