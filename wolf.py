@@ -65,19 +65,19 @@ class Wolf:
         game = Wolf.Games[game_id]
         players = list(game.keys())
         if mode == "Normal":
-            # Calculate and set the numbers of wolfs
+            # Calculate the numbers of wolfs
             wolves = max(1, int(len(game) * 0.25))
             # Random choice the wolf players
             wolf_players = random.sample(players, wolves)
             # Loops for set roles
             for player in wolf_players:
                 # Random role wolf team
-                papel = random.choice(Wolf.Modes[mode]["Wolves"])
-                game[player] = ["Wolves", papel, "Alive"]
+                wrole = random.choice(Wolf.Modes[mode]["Wolves"])
+                game[player] = ["Wolves", wrole, "Alive"]
             for player in players:
                 if player not in wolf_players:
-                    papel = random.choice(Wolf.Modes[mode]["Ville"])
-                    game[player] = ["Ville", papel, "Alive"]
+                    vrole = random.choice(Wolf.Modes[mode]["Ville"])
+                    game[player] = ["Ville", vrole, "Alive"]
         # TODO:
         # logic if players < 10 = set sect
         pass
