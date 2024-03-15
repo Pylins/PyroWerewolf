@@ -1,0 +1,74 @@
+{
+    "Werewolf": {
+        "name": "Lobisomem",
+        "emoji": "🐺",
+        "info": "Você é um lobisomem de dia aldeão, a noite lobo.",
+        "msgdeath": "O lobisomem tentou comer a pessoa errada.",
+        "action": "Atacar",
+        "chance": 0
+    },
+    "Alpha": {
+        "name": "Alfa",
+        "emoji": "🐺⚡",
+        "info": "Você é o Alfa da alcateia, com seu poder tem 30% de chance de transformar sua vitima em lobisomem .",
+        "msgdeath": "O Alfa morreu, a alcateia está muito triste e não terá mais ataques está noite.",
+        "action": "Atacar",
+        "chance": 0
+    },
+    "PupWolf": {
+        "name": "Filhote",
+        "emoji": "🐕",
+        "info": "Você é o filhote da alcateia, apesar de arrumar confusão, todos te amam!",
+        "msgdeath": "O filhote foi morto! A alcateia buscará vingança.",
+        "action": "Atacar",
+        "chance": 0
+    },
+    "Zombie": {
+        "name": "Zumbi",
+        "emoji": "🧟",
+        "info": "Você é um zumbi. Em busca de cerebros, infecte outros jogadores e comece o apocalipse.",
+        "msgdeath": "Em busca de cerebros caiu na vala.",
+        "action": "Infectar",
+        "chance": 0
+    },
+    "Separatist": {
+        "name": "Sulista",
+        "emoji": "👨🧉",
+        "info": "Parece que você está insatisfeito, convença a aldeia a se separar.",
+        "msgdeath": "O sonho de uma divisão se foi.",
+        "action": "Convocar",
+        "chance": 0
+    },
+    "Hannibal": {
+        "name": "Hannibal",
+        "emoji": "👴🔪",
+        "info": "Você é um assassino em serie.",
+        "msgdeath": "O hannibal foi encontrado morto ao lado de varias fotos de suas vitímas, alguem fez justiça com as próprias mãos.",
+        "action": "Matar",
+        "chance": 0
+    },
+    "Villager": {
+        "name": "Aldeão",
+        "emoji": "👱",
+        "info": "Você é um aldeão, só fica varrendo o chão.",
+        "msgdeath": "Lá se vai mais um aldeão.",
+        "action": "None",
+        "chance": 100
+    },
+    "Detective": {
+        "name": "Detetive",
+        "emoji": "🕵️",
+        "info": "Elementar, meu caro Watson. Você é um detetive.",
+        "msgdeath": "Em busca de cerebros caiu na vala.",
+        "action": "Investigar",
+        "chance": 70
+    },
+    "Alien": {
+        "name": "ET Bilu",
+        "emoji": "👽",
+        "info": "Apenas busque conhecimento, você pode descobrir o papel de alguem.",
+        "msgdeath": "Tomare que os aliens não fiquem bravos.",
+        "action": "Conhecer",
+        "chance": 50
+    }
+}
