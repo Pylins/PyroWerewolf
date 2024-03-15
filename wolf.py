@@ -64,19 +64,25 @@ class Wolf:
     async def assign_roles(mode, game_id):
         game = Wolf.Games[game_id]
         players = list(game.keys())
+        team = Wolf.Modes[mode]
+        
         if mode == "Normal":
             # Calculate the numbers of wolfs
             wolves = max(1, int(len(game) * 0.25))
             # Random choice the wolf players
             wolf_players = random.sample(players, wolves)
+            # Copy of team list
+            available_wolf_roles = team["Wolves"].copy()
+            available_ville_roles = team["Ville"].copy()
             # Loops for set roles
-            for player in wolf_players:
-                # Random role wolf team
-                wrole = random.choice(Wolf.Modes[mode]["Wolves"])
-                game[player] = ["Wolves", wrole, "Alive"]
             for player in players:
-                if player not in wolf_players:
-                    vrole = random.choice(Wolf.Modes[mode]["Ville"])
+                if player in wolf_players:
+                    wrole = random.choice(available_wolf_roles)
+                    available_wolf_roles.remove(wrole)
+                    game[player] = ["Wolves", wrole, "Alive"]
+                else:
+                    vrole = random.choice(available_ville_roles)
+                    available_ville_roles.remove(vrole)
                     game[player] = ["Ville", vrole, "Alive"]
         # TODO:
         # logic if players < 10 = set sect
