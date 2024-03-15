@@ -86,7 +86,7 @@ class Wolf:
                     game[player] = ["Ville", vrole, "Alive"]
         # TODO:
         # logic if players < 10 = set sect
-        pass
+        return True
     async def play():
         # TODO:
         # Inicia o jogo com os jogadores.
