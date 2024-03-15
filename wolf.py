@@ -12,38 +12,15 @@ with open("roles.json") as f:
     roles = json.load(f)
 class Wolf:
     
-    # Roles={Country:{Team:{Role:[emoji,description,conversion]}}}
-    Roles = {
-        "Global": {
-            "Wolves": {
-                "Werewolf": ["🐺","Você é um lobisomem e pode se passar por um aldeão comum e atacar durante a noite.",0],
-                "Alpha": ["🌙","Você é o lobo alfa e tem 25% de chance de transformar um jogador em lobisomem.",0],
-                "PupWolf": ["🐕","Você é o filhote apesar de  atrapalhar a alcateia, todos te amam! Se você morrer os lobos ficarão raivosos.",0],
-            },
-            "Sect": {
-                "Zombie": ["🧟","Cerebro o que mais deseja. Você é um zombie, infecte outros jogadores e comece o apocalipse.",0],
-            },
-            "Solo": {
-                "Hannibal": ["🔪","Você é um serial killer.",0]
-            },
-            "Ville": {
-                "Villager": ["👱","Você é um aldeão, só fica varrendo o chão.",100],
-                "Detective": ["🧐","Elementar, meu caro Watson! Você é um detetive aja como tal.",70],
-            },
-        },
-        "Brazil": {
-            "Sect": {
-                "Sulista": ["👨","Você é um separatista, convença os jogadores a transformar o sul em um país.", 0],
-            },
-            "Solo": {
-                "Alien": ["👽","Busquem conhecimento. Como o ET Bilu você pode visitar jogadores.",],
-            },
-            "Ville": {
-                "Gravida": ["🤰","Você está gravida, parabéns seria se você não fosse a gravida de Taubaté.", 100]
-            },
-        },
+    # Modes={Mode:{Team:{Roles}}
+    Modes = {
+        "Normal": {
+            "Wolves": ["Werewolf", "Alpha", "PupWolf"],
+            "Sect": ["Zombie", "Separatist"],
+            "Solo": ["Hannibal", "Alien"],
+            "Ville": ["Villager", "Detective"]
+        }
     }
-    
     # Games={GameID:{Name:[Team,Role,State]}}
     Games = {
         # Example
