@@ -7,6 +7,9 @@ import random
 
 app = Client ("botcapi")
 
+import json
+with open("roles.json") as f:
+    roles = json.load(f)
 class Wolf:
     
     # Roles={Country:{Team:{Role:[emoji,description,conversion]}}}
