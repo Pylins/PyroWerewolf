@@ -10,6 +10,7 @@ app = Client ("botcapi")
 import json
 with open("roles.json") as f:
     roles = json.load(f)
+    
 class Wolf:
     
     # Modes={Mode:{Team:{Roles}}
