@@ -67,24 +67,15 @@ class Wolf:
         team = Wolf.Modes[mode]
         
         if mode == "Normal":
-            # Calculate the numbers of wolfs
-            wolves = max(1, int(len(game) * 0.25))
-            # Random choice the wolf players
-            wolf_players = random.sample(players, wolves)
-            # Copy of team list
-            available_wolf_roles = team["Wolves"].copy()
-            available_ville_roles = team["Ville"].copy()
-            # Loops for set roles
-            for player in players:
-                if player in wolf_players:
-                    wrole = random.choice(available_wolf_roles)
-                    available_wolf_roles.remove(wrole)
-                    game[player] = ["Wolves", wrole, "Alive"]
-                else:
-                    vrole = random.choice(available_ville_roles)
-                    available_ville_roles.remove(vrole)
-                    game[player] = ["Ville", vrole, "Alive"]
         # TODO:
+        # Balanceamento
+        # Atribui papeis conforme:
+        # no minimo um lobo
+        # apartir de 4 pessoas deve ter mais lobos
+        # apartir de 10 jogadores haverá a seita
+        # Calculate the numbers of wolfs
+        # Random choice the wolf players
+        # Loops for set roles
         # logic if players < 10 = set sect
         return True
     async def play():
